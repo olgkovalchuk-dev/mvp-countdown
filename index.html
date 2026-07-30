@@ -56,6 +56,7 @@ body{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -81,69 +82,106 @@ body{
 
 <script>
 
+// правильное склонение слов
+function pluralize(number, one, few, many) {
+
+    if (number % 10 === 1 && number % 100 !== 11) {
+        return one;
+    }
+
+    if (
+        number % 10 >= 2 &&
+        number % 10 <= 4 &&
+        (number % 100 < 10 || number % 100 >= 20)
+    ) {
+        return few;
+    }
+
+    return many;
+}
+
+
 function updateCountdown(){
 
-const launchDate = new Date("August 15, 2026 00:00:00");
+    const launchDate = new Date("August 15, 2026 00:00:00");
 
-const now = new Date();
+    const now = new Date();
 
-const difference = launchDate - now;
+    const difference = launchDate - now;
 
 
-if(difference <=0){
+    // если запуск уже состоялся
+    if(difference <= 0){
 
-document.querySelector(".card").innerHTML = `
-<div class="success">
-🚀 MVP УСПЕШНО ЗАПУЩЕН
-</div>
+        document.querySelector(".card").innerHTML = `
+            <div class="success">
+                🚀 MVP УСПЕШНО ЗАПУЩЕН
+            </div>
 
-<div class="date">
-15 августа 2026
-</div>
-`;
+            <div class="date">
+                15 августа 2026
+            </div>
+        `;
 
-return;
+        return;
+
+    }
+
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+
+    const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24))
+        /
+        (1000 * 60 * 60)
+    );
+
+
+    const minutes = Math.floor(
+        (difference % (1000 * 60 * 60))
+        /
+        (1000 * 60)
+    );
+
+
+    document.getElementById("days").innerHTML =
+        days + " " + pluralize(
+            days,
+            "день",
+            "дня",
+            "дней"
+        );
+
+
+    document.getElementById("time").innerHTML =
+        hours + " " + pluralize(
+            hours,
+            "час",
+            "часа",
+            "часов"
+        )
+        +
+        " "
+        +
+        minutes + " " + pluralize(
+            minutes,
+            "минута",
+            "минуты",
+            "минут"
+        );
 
 }
 
 
-const days = Math.floor(
-difference/(1000*60*60*24)
-);
-
-
-const hours = Math.floor(
-(difference%(1000*60*60*24))
-/
-(1000*60*60)
-);
-
-
-const minutes = Math.floor(
-(difference%(1000*60*60))
-/
-(1000*60)
-);
-
-
-document.getElementById("days").innerHTML =
-days + " ДНЕЙ";
-
-
-document.getElementById("time").innerHTML =
-hours + " ЧАСОВ " +
-minutes + " МИНУТ";
-
-
-}
-
-
+// первый запуск
 updateCountdown();
 
 
 // обновление каждую минуту
-
-setInterval(updateCountdown,60000);
+setInterval(updateCountdown, 60000);
 
 
 </script>
