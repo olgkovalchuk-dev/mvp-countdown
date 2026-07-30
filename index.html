@@ -1,207 +1,152 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8">
+<title>Запуск MVP</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+.card{
+    max-width:700px;
+    margin:auto;
+    padding:40px;
+    background:white;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.title{
+    font-size:20px;
+    color:#777;
+    margin-bottom:20px;
+}
+
+.days{
+    font-size:72px;
+    font-weight:700;
+    color:#FF5630;
+    line-height:1;
+}
+
+.time{
+    font-size:32px;
+    font-weight:600;
+    margin-top:15px;
+    color:#444;
+}
+
+.date{
+    margin-top:35px;
+    font-size:24px;
+    color:#888;
+}
+
+.success{
+    font-size:48px;
+    font-weight:700;
+    color:#FF5630;
+}
+
+</style>
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ru"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;title&gt;Запуск MVP&lt;/title&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">body{</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin:0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding:20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-family:Arial,sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background:#f5f5f5;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">.card{</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>max-width:700px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin:auto;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding:50px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background:white;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius:25px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>box-shadow:0 10px 30px rgba(0,0,0,.08);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-align:center;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">.title{</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size:34px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-weight:700;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom:40px;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">.subtitle{</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size:24px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:#777;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom:25px;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">.days{</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size:90px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-weight:700;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:#FF5630;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>line-height:1;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">.time{</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size:36px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-weight:600;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:#444;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin-top:20px;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">.success{</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size:48px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-weight:700;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color:#FF5630;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="card"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>🚀 ЗАПУСК MVP — 15 АВГУСТА 2026</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="subtitle"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>До запуска осталось</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="days" class="days"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Загрузка...</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="time" class="time"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">function updateCountdown(){</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">const launchDate = new Date("August 15, 2026 00:00:00");</p>
-<p class="p2"><br></p>
-<p class="p1">const now = new Date();</p>
-<p class="p2"><br></p>
-<p class="p1">const difference = launchDate - now;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">if(difference &lt;=0){</p>
-<p class="p2"><br></p>
-<p class="p1">document.querySelector(".card").innerHTML = `</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="success"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">🚀 MVP УСПЕШНО ЗАПУЩЕН</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">`;</p>
-<p class="p2"><br></p>
-<p class="p1">return;</p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">const days = Math.floor(</p>
-<p class="p1">difference/(1000*60*60*24)</p>
-<p class="p1">);</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">const hours = Math.floor(</p>
-<p class="p1">(difference%(1000*60*60*24))</p>
-<p class="p1">/</p>
-<p class="p1">(1000*60*60)</p>
-<p class="p1">);</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">const minutes = Math.floor(</p>
-<p class="p1">(difference%(1000*60*60))</p>
-<p class="p1">/</p>
-<p class="p1">(1000*60)</p>
-<p class="p1">);</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">document.getElementById("days").innerHTML =</p>
-<p class="p1">days + " ДНЕЙ";</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">document.getElementById("time").innerHTML =</p>
-<p class="p1">hours + " ЧАСОВ " +</p>
-<p class="p1">minutes + " МИНУТ";</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">updateCountdown();</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">// обновление каждую минуту</p>
-<p class="p2"><br></p>
-<p class="p1">setInterval(updateCountdown,60000);</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div class="card">
+
+    <div class="title">
+        🚀 До запуска продукта осталось
+    </div>
+
+    <div id="days" class="days">
+        Загрузка...
+    </div>
+
+    <div id="time" class="time"></div>
+
+    <div class="date">
+        15 августа 2026
+    </div>
+
+</div>
+
+
+<script>
+
+function updateCountdown(){
+
+const launchDate = new Date("August 15, 2026 00:00:00");
+
+const now = new Date();
+
+const difference = launchDate - now;
+
+
+if(difference <=0){
+
+document.querySelector(".card").innerHTML = `
+<div class="success">
+🚀 MVP УСПЕШНО ЗАПУЩЕН
+</div>
+
+<div class="date">
+15 августа 2026
+</div>
+`;
+
+return;
+
+}
+
+
+const days = Math.floor(
+difference/(1000*60*60*24)
+);
+
+
+const hours = Math.floor(
+(difference%(1000*60*60*24))
+/
+(1000*60*60)
+);
+
+
+const minutes = Math.floor(
+(difference%(1000*60*60))
+/
+(1000*60)
+);
+
+
+document.getElementById("days").innerHTML =
+days + " ДНЕЙ";
+
+
+document.getElementById("time").innerHTML =
+hours + " ЧАСОВ " +
+minutes + " МИНУТ";
+
+
+}
+
+
+updateCountdown();
+
+
+// обновление каждую минуту
+
+setInterval(updateCountdown,60000);
+
+
+</script>
+
 </body>
 </html>
