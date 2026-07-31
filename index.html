@@ -24,12 +24,28 @@ body{
 }
 
 .title{
-    font-size:20px;
+    font-size:36px;
+    font-weight:700;
+    color:#222;
+    line-height:1.2;
+}
+
+.date{
+    margin-top:10px;
+    font-size:26px;
     color:#777;
-    margin-bottom:20px;
+}
+
+.subtitle{
+    margin-top:35px;
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:2px;
+    color:#999;
 }
 
 .days{
+    margin-top:20px;
     font-size:72px;
     font-weight:700;
     color:#FF5630;
@@ -37,22 +53,17 @@ body{
 }
 
 .time{
+    margin-top:15px;
     font-size:32px;
     font-weight:600;
-    margin-top:15px;
     color:#444;
-}
-
-.date{
-    margin-top:35px;
-    font-size:24px;
-    color:#888;
 }
 
 .success{
     font-size:48px;
     font-weight:700;
     color:#FF5630;
+    line-height:1.3;
 }
 
 </style>
@@ -64,7 +75,15 @@ body{
 <div class="card">
 
     <div class="title">
-        🚀 До запуска MVP осталось
+        ЗАПУСК MVP
+    </div>
+
+    <div class="date">
+        15 августа 2026 г.
+    </div>
+
+    <div class="subtitle">
+        ОСТАЛОСЬ
     </div>
 
     <div id="days" class="days">
@@ -73,53 +92,49 @@ body{
 
     <div id="time" class="time"></div>
 
-    <div class="date">
-        15 августа 2026
-    </div>
-
 </div>
 
 
 <script>
 
-// правильное склонение слов
-function pluralize(number, one, few, many) {
+// Функция правильного склонения слов
+function pluralize(number, one, few, many){
 
-    if (number % 10 === 1 && number % 100 !== 11) {
+    if(number % 10 === 1 && number % 100 !== 11){
         return one;
     }
 
-    if (
+    if(
         number % 10 >= 2 &&
         number % 10 <= 4 &&
         (number % 100 < 10 || number % 100 >= 20)
-    ) {
+    ){
         return few;
     }
 
     return many;
+
 }
 
 
+// Обновление счетчика
 function updateCountdown(){
 
     const launchDate = new Date("August 15, 2026 00:00:00");
-
     const now = new Date();
-
     const difference = launchDate - now;
 
 
-    // если запуск уже состоялся
+    // Если запуск состоялся
     if(difference <= 0){
 
         document.querySelector(".card").innerHTML = `
             <div class="success">
-                🚀 MVP УСПЕШНО ЗАПУЩЕН
+                🚀 MVP ЗАПУЩЕН
             </div>
 
             <div class="date">
-                15 августа 2026
+                15 августа 2026 г.
             </div>
         `;
 
@@ -128,6 +143,7 @@ function updateCountdown(){
     }
 
 
+    // Расчет времени
     const days = Math.floor(
         difference / (1000 * 60 * 60 * 24)
     );
@@ -147,8 +163,10 @@ function updateCountdown(){
     );
 
 
+    // Вывод дней
     document.getElementById("days").innerHTML =
-        days + " " + pluralize(
+        days + " " +
+        pluralize(
             days,
             "день",
             "дня",
@@ -156,17 +174,18 @@ function updateCountdown(){
         );
 
 
+    // Вывод часов и минут
     document.getElementById("time").innerHTML =
-        hours + " " + pluralize(
+        hours + " " +
+        pluralize(
             hours,
             "час",
             "часа",
             "часов"
         )
-        +
-        " "
-        +
-        minutes + " " + pluralize(
+        + " " +
+        minutes + " " +
+        pluralize(
             minutes,
             "минута",
             "минуты",
@@ -176,11 +195,11 @@ function updateCountdown(){
 }
 
 
-// первый запуск
+// Первый запуск
 updateCountdown();
 
 
-// обновление каждую минуту
+// Обновление каждую минуту
 setInterval(updateCountdown, 60000);
 
 
